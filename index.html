@@ -3,145 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoja de Vida</title>
-    <style>body{
-    margin:0;
-    font-family: Arial;
-    background:#e4e4e4;
-}
+    <title>Formulario Web</title>
 
-.cv-container{
-    width:80%;
-    margin:30px auto;
-    display:flex;
-    background:white;
-    box-shadow:0px 0px 20px rgba(0,0,0,0.2);
-}
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
 
-.left{
-    width:35%;
-    background:#0f2b46;
-    color:white;
-    padding:30px;
-}
+        body{
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
 
-.right{
-    width:65%;
-    padding:40px;
-}
+        .contenedor{
+            background:white;
+            width:400px;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        }
 
-.foto{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    display:block;
-    margin:auto;
-    border:5px solid #4da6ff;
-}
+        .contenedor h1{
+            text-align:center;
+            margin-bottom:20px;
+            color:#333;
+        }
 
-h1{
-    color:#0f2b46;
-    font-size:50px;
-    margin-bottom:5px;
-}
+        .grupo{
+            margin-bottom:15px;
+        }
 
-h3{
-    color:#4da6ff;
-    margin-top:0;
-}
+        label{
+            display:block;
+            margin-bottom:5px;
+            color:#444;
+            font-weight:bold;
+        }
 
-h2{
-    border-bottom:2px solid #4da6ff;
-    padding-bottom:5px;
-    margin-top:30px;
-}
+        input, select, textarea{
+            width:100%;
+            padding:12px;
+            border:2px solid #ddd;
+            border-radius:10px;
+            outline:none;
+            transition:0.3s;
+        }
 
-.section{
-    margin-top:30px;
-}
+        input:focus,
+        select:focus,
+        textarea:focus{
+            border-color:#4facfe;
+        }
 
-.skills span{
-    background:#4da6ff;
-    color:white;
-    padding:10px 15px;
-    border-radius:20px;
-    display:inline-block;
-    margin:5px;
-}
+        textarea{
+            resize:none;
+            height:90px;
+        }
 
-ul{
-    padding-left:20px;
-}
+        button{
+            width:100%;
+            padding:14px;
+            border:none;
+            background:#4facfe;
+            color:white;
+            font-size:16px;
+            border-radius:10px;
+            cursor:pointer;
+            transition:0.3s;
+        }
 
-p{
-    line-height:1.6;
-}</style>
+        button:hover{
+            background:#008cff;
+            transform:scale(1.03);
+        }
+
+        .mensaje{
+            margin-top:15px;
+            text-align:center;
+            color:green;
+            font-weight:bold;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="cv-container">
+    <div class="contenedor">
+        <h1>Formulario Web</h1>
 
-    <div class="left">
+        <form id="miFormulario">
 
-        <img src="https://i.imgur.com/4ZQZ4Z9.png" class="foto">
-
-        <h2>PERFIL</h2>
-        <p>
-            Estudiante responsable, creativo y con interés en aprender nuevas tecnologías.
-        </p>
-
-        <h2>CONTACTO</h2>
-
-        <p>📧 samuelagudelo0578@gmail.com</p>
-        <p>📱 3122530940</p>
-        <p>📍 Colombia</p>
-
-        <h2>HABILIDADES TECNICAS</h2>
-
-        <ul>
-            <li>Trabajo en equipo</li>
-            <li>Responsabilidad</li>
-            <li>Creatividad</li>
-            <li>Comunicación</li>
-        </ul>
-
-    </div>
-
-    <div class="right">
-
-        <h1>Samuel Agudelo</h1>
-
-        <h3>ESTUDIANTE</h3>
-
-        <div class="section">
-            <h2>EDUCACIÓN</h2>
-
-            <p><strong>Universidad</strong></p>
-            <p>Bachiller</p>
-        </div>
-
-        <div class="section">
-            <h2>EXPERIENCIA</h2>
-
-            <p><strong>Trabajo</strong></p>
-            <p>Trabajado en restaurante y practicado html y distintas apps de codigo</p>
-        </div>
-
-        <div class="section">
-            <h2>HABILIDADES TÉCNICAS</h2>
-
-            <div class="skills">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Word</span>
+            <div class="grupo">
+                <label>Nombre</label>
+                <input type="text" placeholder="Ingresa tu nombre" required>
             </div>
-        </div>
 
+            <div class="grupo">
+                <label>Correo</label>
+                <input type="email" placeholder="Ingresa tu correo" required>
+            </div>
+
+            <div class="grupo">
+                <label>Edad</label>
+                <input type="number" placeholder="Ingresa tu edad" required>
+            </div>
+
+            <div class="grupo">
+                <label>Ciudad</label>
+                <select>
+                    <option>Pereira</option>
+                    <option>Medellín</option>
+                    <option>Bogotá</option>
+                    <option>Cali</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <label>Mensaje</label>
+                <textarea placeholder="Escribe un mensaje"></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+
+            <div class="mensaje" id="mensaje"></div>
+
+        </form>
     </div>
 
-</div>
+    <script>
+        const formulario = document.getElementById('miFormulario');
+        const mensaje = document.getElementById('mensaje');
+
+        formulario.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            mensaje.innerHTML = 'Formulario enviado correctamente ✅';
+
+            formulario.reset();
+        });
+    </script>
 
 </body>
 </html>
