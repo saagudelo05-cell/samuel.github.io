@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Web</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .contenedor{
+            background:white;
+            width:400px;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .contenedor h1{
+            text-align:center;
+            margin-bottom:20px;
+            color:#333;
+        }
+
+        .grupo{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:5px;
+            color:#444;
+            font-weight:bold;
+        }
+
+        input, select, textarea{
+            width:100%;
+            padding:12px;
+            border:2px solid #ddd;
+            border-radius:10px;
+            outline:none;
+            transition:0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus{
+            border-color:#4facfe;
+        }
+
+        textarea{
+            resize:none;
+            height:90px;
+        }
+
+        button{
+            width:100%;
+            padding:14px;
+            border:none;
+            background:#4facfe;
+            color:white;
+            font-size:16px;
+            border-radius:10px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#008cff;
+            transform:scale(1.03);
+        }
+
+        .mensaje{
+            margin-top:15px;
+            text-align:center;
+            color:green;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Formulario Web</h1>
+
+        <form id="miFormulario">
+
+            <div class="grupo">
+                <label>Nombre</label>
+                <input type="text" placeholder="Ingresa tu nombre" required>
+            </div>
+
+            <div class="grupo">
+                <label>Correo</label>
+                <input type="email" placeholder="Ingresa tu correo" required>
+            </div>
+
+            <div class="grupo">
+                <label>Edad</label>
+                <input type="number" placeholder="Ingresa tu edad" required>
+            </div>
+
+            <div class="grupo">
+                <label>Ciudad</label>
+                <select>
+                    <option>Pereira</option>
+                    <option>Medellín</option>
+                    <option>Bogotá</option>
+                    <option>Cali</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <label>Mensaje</label>
+                <textarea placeholder="Escribe un mensaje"></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+
+            <div class="mensaje" id="mensaje"></div>
+
+        </form>
+    </div>
+
+    <script>
+        const formulario = document.getElementById('miFormulario');
+        const mensaje = document.getElementById('mensaje');
+
+        formulario.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            mensaje.innerHTML = 'Formulario enviado correctamente ✅';
+
+            formulario.reset();
+        });
+    </script>
+
+</body>
+</html>
